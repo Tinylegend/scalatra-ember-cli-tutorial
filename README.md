@@ -8,6 +8,8 @@ Create a template liked project for using Scala, Scalatra, Ember-cli with multip
 - Integrate Ember.js UI project into Scalatra.
 - Enable multiple Ember.js projects live under same domain.
 - Multiple Ember.js projects shared same authentication. (Use Ember-simple-auth).
+- All these projects can be run under one service in one domain. 
+- It is also support flexible to split the project to run as individual services.  
 
 ## Structure ##
 
