@@ -17,7 +17,9 @@ object TinyLegendWebBuild extends Build {
   lazy val commonDeps = Seq(
     "commons-lang" % "commons-lang" % "2.6",
     "ch.qos.logback" % "logback-classic" % "1.1.7",
-    "org.apache.commons" % "commons-lang3" % "3.0.1"
+    "org.apache.commons" % "commons-lang3" % "3.0.1",
+    "org.scalactic" %% "scalactic" % "3.0.1",
+    "org.scalatest" %% "scalatest" % "3.0.1" % "test"
   )
 
   lazy val commonSettings = Seq (
