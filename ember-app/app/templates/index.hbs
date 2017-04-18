@@ -1,0 +1,28 @@
+{{#each model as |product|}}
+
+  <div class="ui card">
+    <div class="image dimmable">
+      <div class="ui blurring inverted dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui teal button">Product</div>
+          </div>
+        </div>
+      </div>
+      <img src="{{product.image}}">
+    </div>
+    <div class="content">
+      <div class="header">{{product.title}}</div>
+      <div class="meta">
+        <a class="group">Meta</a>
+      </div>
+      <div class="description">{{product.detail}}</div>
+    </div>
+    <div class="extra content">
+      <a class="right floated created">Arbitrary</a>
+      <a class="friends">
+        Arbitrary</a>
+    </div>
+  </div>
+
+{{/each}}
