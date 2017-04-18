@@ -28,8 +28,10 @@ Create a template liked project for using Scala, Scalatra, Ember-cli with multip
 
 ## How to use the project ##
 
-- For study purpose, you can follow up the branch number and step by step to see each step's topic. How it was made. It should have its own README.md file as document.
+- For study purpose, you can follow up the branch number and do it step by step to see each step's topic and understand how it was made. 
+It should have its own README.md file as document under [docs](docs/) folder.
 - If you just want to use this project, you can clone the master and start to use it.
+- You can look at the git commit history to see what was changed in each of branch.
 
 
 ## Contribute to the project ##
