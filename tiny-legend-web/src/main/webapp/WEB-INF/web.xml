@@ -12,4 +12,10 @@
   <listener>
     <listener-class>org.scalatra.servlet.ScalatraListener</listener-class>
   </listener>
+
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/app/*</url-pattern>
+  </servlet-mapping>
+
 </web-app>
