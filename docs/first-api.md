@@ -105,5 +105,11 @@ Now let's run sbt ~jetty:start and visit http://localhost:8080/api/products, you
 List(Product(T1,Lingcod 1,Test Detail 1,/static/images/lingcod1.jpeg), Product(T2,Lingcod 2,Test Detail 2,/static/images/lingcod2.jpeg))
 ```
 
+From the console, you should see the log was outputed:
+
+```aidl
+c.t.app.api.products.ProductsServlet - Request for products from:0:0:0:0:0:0:0:1
+```
+
 Yep, we are done in first API!
 

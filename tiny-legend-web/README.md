@@ -26,4 +26,4 @@ For the setting, please see build.sbt file. For more setting, you can refer to [
 
 ### 2. First-API ###
 
-- Add a JSON API for scalatra
+- [Add a JSON API for scalatra](../docs/first-api.md) 
