@@ -3,7 +3,7 @@ package com.tinylegend.app
 import org.scalatra._
 import org.scalatra.metrics.MetricsSupport
 
-class LegendServlet extends TinyLegendWebStack with MetricsSupport{
+  class LegendServlet extends TinyLegendWebStack with MetricsSupport{
 
   get("/") {
     metrics.timer("HomePage").time {
