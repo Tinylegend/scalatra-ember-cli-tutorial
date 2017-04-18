@@ -18,8 +18,12 @@ For the setting, please see build.sbt file. For more setting, you can refer to [
 
 ## What do you get ##
 
-### Init-Scalatra ###
+### 1. Init-Scalatra ###
 
 - Blank Scalatra project.
 - jetty:start with debug.
 - Scalatra jade template.
+
+### 2. First-API ###
+
+- Add a JSON API for scalatra
