@@ -2,6 +2,7 @@ import com.tinylegend.app._
 import org.scalatra._
 import javax.servlet.ServletContext
 
+import com.tinylegend.app.api.products.ProductsServlet
 import org.scalatra.metrics.MetricsBootstrap
 import org.scalatra.metrics.MetricsSupportExtensions._
 
@@ -19,5 +20,7 @@ class ScalatraBootstrap extends LifeCycle with MetricsBootstrap {
     context.installInstrumentedFilter("/test/*")
 
     context.mount(new LegendServlet, "/*")
+
+    context.mount(new ProductsServlet(), "/api/products")
   }
 }
