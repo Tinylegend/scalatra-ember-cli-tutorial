@@ -21,6 +21,12 @@
       </div>
     </div>
 
+    {{#if session.isAuthenticated}}
+      <button {{action 'logout'}}>Logout</button>
+    {{else}}
+      <button {{action 'login'}}>Login</button>
+    {{/if}}
+
   </div>
 
   <div class="body">
