@@ -22,16 +22,16 @@ Yep, I agree it could be another solution for going to micro-service.
 But for now, by adding another ember app, since two ember apps are still standalone, 
 you are free to deploy it into one service container, or deploy it into multiple service container. 
 It is not hard to combine or separate them. 
-By the way, ember are static content, it is not one times downloading from client side. I won't not have too much concern on the server side load at this point. 
+By the way, ember are static content, it is only one times downloading in client side. I would not have too much concern on the server side loading at this point. 
 In stead, I am more worry about the backend API performance.
 
 For current goal, just want to make sites work together at sandbox level but leave flexible ability in distribution. In another word, current design goal is make it to be flexible in distribution and make the distribution selection easier later. 
 
 
-Another goal for the design: I want to these sites work together just looks like they are under same domain. Like http://mydomain.com/. 
+Another goal for the design: I want to have these sites work together just looks like they are one server under one domain. Like http://mydomain.com/. 
 When client visit http://mydomain.com/app or http://mydomain.com/admin, they don't need to know if the sites are in one container or two containers.
 
-When deploy the two sites into two different containers, we can use Nginx or Apache to route the URL to different target server. 
+When deploy the two sites into two different containers, we can use Nginx or Apache to route the URL to different target servers. 
 That is whole different conversation. We can support it, but we will discuss it in advance topic.
 
 ## Now let's start the new ember APP ##
