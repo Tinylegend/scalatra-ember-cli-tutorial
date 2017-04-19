@@ -25,7 +25,7 @@ For the large system, I would like to use this layer just take the request from 
  then distribute the actually function into internal micro-services system. 
  Those micro-services are not public internet facing. And we may need less access control here. 
  
-![Single-server-architecture](images/multiple-layers-services.png)
+![Multiple-server-architecture](images/multiple-layers-services.png)
 
 
 ## Summary ##
