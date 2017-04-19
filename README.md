@@ -24,7 +24,7 @@ Create a template liked project for using Scala, Scalatra, Ember-cli with multip
 - Singe thin service architecture
 ![Single-server-architecture](docs/images/single-layer-server.png)
 
-- Singe thin service architecture
+- Multiple services with Micro-Service architecture
 ![Multiple-server-architecture](docs/images/multiple-layers-services.png)
 
 ## How the project be managed ##
