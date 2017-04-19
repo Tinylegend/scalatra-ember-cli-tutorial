@@ -15,7 +15,7 @@ I expect we should do first step.
 ## Add user session support in ember-app ##
 - Install ember-simple-auth to ember-app and ember-admin
 ```aidl
-$ember install 
+$ember install ember-simple-auth
 ```
 - Create application controller
 ```aidl
@@ -67,9 +67,9 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 ### Let's test it ###
 
 - Login to http://localhost:8080/user, I can see 'logout' button. I was logged in.
-- Switch to http://localhost:8080/app. I see the page menu bar, it show 'login'.
+- Switch to http://localhost:8080/app. I see in the menu bar, it show **'login'**.
 
-Does not work yet. What is happened?
+Does not work yet. What was happened?
 
 - Yep, after check the cookie, it did not looks like has full authentication token in the cookie yet.
  See following image. The cookie is too short.
@@ -79,7 +79,7 @@ Does not work yet. What is happened?
 - By default ember use local storage store for session. It is not sharable between embers. Let's add cookie store.
 Following by this doc: [CookieStore](https://ember-simple-auth.com/api/classes/CookieStore.html)
 
-Important thing is session-stores, we need add CookieStore so ember will use it. We need to do it in all Ember apps.
+Important thing is session-stores, we need add CookieStore so ember will use it. We need to do it in **_all Ember apps_**.
 
 ```aidl
 $ cd app
@@ -100,7 +100,7 @@ export default CookieStore.extend();
 ### Let's test it again ###
 
 - Login to http://localhost:8080/user, I can see 'logout' button. I was logged in.
-- Switch to http://localhost:8080/app. I see the page menu bar, it show 'login'.
+- Switch to http://localhost:8080/app. I see in the menu bar, it show **'login'**.
 
 Still does not work! But good is I see the auth cookie in both /user and /app. A little progress.
  
@@ -159,7 +159,7 @@ restore: function(data) {
 ### Let's test it one more time ###
 
 - Login to http://localhost:8080/user, I can see 'logout' button. I was logged in.
-- Switch to http://localhost:8080/app. I see the page menu bar, it show 'logout' !
+- Switch to http://localhost:8080/app. I see in the menu bar, it show **'logout'** !
 
 Woo. We got it works!
 
