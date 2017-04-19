@@ -18,4 +18,16 @@
     <url-pattern>/app/*</url-pattern>
   </servlet-mapping>
 
+
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/admin/*</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/user/*</url-pattern>
+  </servlet-mapping>
+
 </web-app>
