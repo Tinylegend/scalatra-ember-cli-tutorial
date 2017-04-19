@@ -1,2 +1,30 @@
+<div class="ui container">
+  <div class="ui stackable menu">
 
-{{outlet}}
+    {{#link-to 'index' class='header item'}}
+      <img src="{{rootURL}}../static/images/bh-logo.png">
+    {{/link-to}}
+
+    {{#link-to 'about' class='item'}}
+      About
+    {{/link-to}}
+
+    {{#link-to 'contact' class='item'}}
+      Contact
+    {{/link-to}}
+
+    <div class="item right">
+      <div class="ui action left icon input">
+        <i class="search icon"></i>
+        <input type="text" placeholder="Search">
+        <button class="ui button">go</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="body">
+    {{outlet}}
+  </div>
+
+</div>
