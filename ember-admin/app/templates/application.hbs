@@ -1,5 +1,36 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="ui container">
+  <div class="ui stackable menu">
 
-{{outlet}}
+    {{#link-to 'index' class='header item'}}
+      <img src="{{rootURL}}../static/images/bh-logo.png">
+    {{/link-to}}
+
+    {{#link-to 'product' class='item'}}
+      Product
+    {{/link-to}}
+
+    {{#link-to 'sale' class='item'}}
+      Sale
+    {{/link-to}}
+
+    <div class="item right">
+      <div class="ui action left icon input">
+        <i class="search icon"></i>
+        <input type="text" placeholder="Search">
+        <button class="ui button">go</button>
+      </div>
+    </div>
+
+    {{#if session.isAuthenticated}}
+      <button {{action 'logout'}}>Logout</button>
+    {{else}}
+      <button {{action 'login'}}>Login</button>
+    {{/if}}
+
+  </div>
+
+  <div class="body">
+    {{outlet}}
+  </div>
+
+</div>
