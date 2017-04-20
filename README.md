@@ -1,4 +1,4 @@
-# scalatra-ember-cli-projects #
+# scalatra-ember-cli-tutorial #
 Create a template liked project for using Scala, Scalatra, Ember-cli with multiple projects in one place.
 
 ## Goal ##
