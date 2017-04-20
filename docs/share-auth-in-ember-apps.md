@@ -205,3 +205,13 @@ export default Base.extend({
 ## Update admin to enable authentication as well ##
 
 Enable the admin auth check. Also added home page menu, index, product, sale routes etc.
+
+
+## About other apps under same domain ##
+
+Other than these Ember APPs, other apps also can get same auth cookie as well.
+
+To enable the authentication be shared for other APPs (No Ember Apps), such as Scatra Api, or Java API etc, 
+Since the cooke was send in every request, so as long as other apps could understnad the cookie, then it should be able to use the JWT token.
+
+Ember also have another authorize could construct cookie for API call. This will be discussed in other topic.
