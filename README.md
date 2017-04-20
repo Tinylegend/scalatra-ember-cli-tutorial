@@ -1,4 +1,4 @@
-# scalatra-ember-cli-projects #
+# scalatra-ember-cli-tutorial #
 Create a template liked project for using Scala, Scalatra, Ember-cli with multiple projects in one place.
 
 ## Goal ##
@@ -18,6 +18,14 @@ Create a template liked project for using Scala, Scalatra, Ember-cli with multip
 -- |-> ember-user : Ember application for manage Ember Users authentication. \
 -- |-> ember-app : Ember application for main UI. It will use the ember-user's authentication. (Share the user authentication from ember-user project.) \
 -- |-> ember-admin : Ember application for admin UI. It will use the ember-user's authentication. (Share the user authentication from ember-user project.) 
+
+## System architecture ##
+
+- Singe thin service architecture
+![Single-server-architecture](docs/images/single-layer-server.png)
+
+- Multiple services with Micro-Service architecture
+![Multiple-server-architecture](docs/images/multiple-layers-services.png)
 
 ## How the project be managed ##
 
