@@ -1,21 +1,17 @@
 package com.tinylegend.app
 
-import org.scalatra._
+import buildinfo.ServerBuildInfo
+
 import org.scalatra.metrics.MetricsSupport
 
-  class LegendServlet extends TinyLegendWebStack with MetricsSupport{
+class LegendServlet extends TinyLegendWebStack with MetricsSupport{
 
   get("/") {
-    metrics.timer("HomePage").time {
-      <html>
-        <body>
-          <h1>
-            Hello, world!
-          </h1>
-          Say <a href="hello-scalate"> hello to Scalate </a>.
-        </body>
-      </html>
-    }
+    redirect("/app/")
   }
 
+  get("/isWorking") {
+    contentType = "application/json"
+    ServerBuildInfo
+  }
 }

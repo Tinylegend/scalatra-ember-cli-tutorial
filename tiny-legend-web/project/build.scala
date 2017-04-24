@@ -1,8 +1,7 @@
 import sbt._
 import Keys._
 import org.scalatra.sbt._
-import org.scalatra.sbt.PluginKeys._
-import com.earldouglas.xwp.JettyPlugin
+import sbtbuildinfo.{BuildInfoKeys, BuildInfoPlugin}
 import com.mojolly.scalate.ScalatePlugin._
 import ScalateKeys._
 
@@ -96,7 +95,9 @@ object TinyLegendWebBuild extends Build {
         }
       )
     )
+    .enablePlugins(BuildInfoPlugin)
+    .settings(BuildInfoKeys.buildInfoObject:= "ServerBuildInfo",
+      BuildInfoKeys.buildInfoKeys += BuildInfoKeys.buildInfoBuildNumber )
     .settings(commonSettings: _*)
-    .enablePlugins(JettyPlugin)
     .aggregate(DomainTier, DataTier, Common)
 }
