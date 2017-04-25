@@ -74,3 +74,31 @@ This buildnumber will be maintained by the sbt buildinfo plugin.
 
 NOTE: you don't need to check in this buildinfo.properties. 
 
+## Git Version ##
+
+We may interest on the git change version so we knew what change it is based on for this build. Let's use this:
+[Git Version](https://github.com/sbt/sbt-git)
+
+```aidl
+// In tiny-legend-web/project/plugins.sbt
+addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.9.2")
+```
+
+Add GitVersioning
+
+```aidl
+// tiny-legend-web/project/build.scala
+import com.typesafe.sbt.GitVersioning
+
+object TinyLegendWebBuild extends Build {
+
+val Version = "0.1.0-SNAPSHOT"
+
+lazy val webApp = Project (
+    "tiny-legend-web",
+    file(".")
+    )
+    .enablePlugins(GitVersioning)
+    .settings(SbtGit.git.baseVersion := Version)
+
+```
