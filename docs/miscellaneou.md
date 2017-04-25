@@ -19,18 +19,18 @@ class BhServlet extends BhHomeAppStack with MetricsSupport{
 
 Or you may implement the default home page here and has menu link to other ember apps. (We will do it later.)
 
-## IsWorking ##
+## ping ##
 
-Usually the site should have a '/isWorking' page to indicate if it is still working. The purpose is for the load balance ping.
+Usually the site should have a '/ping' page to indicate if it is still working. The purpose is for the load balance ping.
 
-For this link, we do not recommend it to be in Ember APPs, instead, we should do it in Scalatra Api Service.
+For this link, we do not recommend it to be in Ember APPs, instead, we should do it in Scalatra Api Service to make sure API is live.
  
-- In LegendServlet.scala, add isWorking.
+- In LegendServlet.scala, add ping.
 ```aidl
 class LegendServlet extends TinyLegendWebStack with MetricsSupport{
 
-  get("/isWorking") {
-    "Hi, I am alive!"
+  get("/ping") {
+    s"You are from: $request.remoteAddress"
   }
 }
 
@@ -43,6 +43,8 @@ Add SBT Build Info plugin. See [git:sbt-buildinfo](https://github.com/sbt/sbt-bu
 In build.scala, enable build info plugin:
 
 ```aidl
+import sbtbuildinfo.{BuildInfoKeys, BuildInfoPlugin}
+
 lazy val webApp = Project (
  "tiny-legend-web",
     file("."),
@@ -53,11 +55,13 @@ lazy val webApp = Project (
       BuildInfoKeys.buildInfoKeys += BuildInfoKeys.buildInfoBuildNumber )
 ```
 
-Then we update the isWorking to return build Info:
+Then we add the buildInfo to return build Info:
 ```aidl
+import buildinfo.ServerBuildInfo
+
 class LegendServlet extends TinyLegendWebStack with MetricsSupport{
 
-  get("/isWorking") {
+  get("/buildInfo") {
     contentType = "application/json"
     ServerBuildInfo
   }
@@ -101,4 +105,22 @@ lazy val webApp = Project (
     .enablePlugins(GitVersioning)
     .settings(SbtGit.git.baseVersion := Version)
 
+```
+
+For adding the git version into buildInfo, do this:
+
+```aidl
+// in the project seeting, add more key like this:
+lazy val webApp = Project (
+    "tiny-legend-web",
+    file(".")
+    )
+    .enablePlugins(BuildInfoPlugin)
+    .enablePlugins(GitVersioning)
+    .settings(BuildInfoKeys.buildInfoObject:= "ServerBuildInfo",
+      BuildInfoKeys.buildInfoKeys += BuildInfoKeys.buildInfoBuildNumber,
+      SbtGit.git.baseVersion := Version,
+      BuildInfoKeys.buildInfoKeys += SbtGit.git.formattedShaVersion,
+      BuildInfoKeys.buildInfoKeys += SbtGit.git.formattedDateVersion
+  )
 ```

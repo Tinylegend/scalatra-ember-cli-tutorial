@@ -10,8 +10,13 @@ class LegendServlet extends TinyLegendWebStack with MetricsSupport{
     redirect("/app/")
   }
 
-  get("/isWorking") {
-    contentType = "application/json"
+
+  get("/ping") {
+    s"You are from: ${request.remoteAddress}"
+  }
+
+  get("/buildInfo") {
+
     ServerBuildInfo
   }
 }
