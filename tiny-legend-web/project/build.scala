@@ -1,8 +1,8 @@
 import sbt._
 import Keys._
 import org.scalatra.sbt._
-import org.scalatra.sbt.PluginKeys._
-import com.earldouglas.xwp.JettyPlugin
+import sbtbuildinfo.{BuildInfoKeys, BuildInfoPlugin}
+import com.typesafe.sbt.{GitVersioning, SbtGit}
 import com.mojolly.scalate.ScalatePlugin._
 import ScalateKeys._
 
@@ -96,7 +96,14 @@ object TinyLegendWebBuild extends Build {
         }
       )
     )
+    .enablePlugins(BuildInfoPlugin)
+    .enablePlugins(GitVersioning)
     .settings(commonSettings: _*)
-    .enablePlugins(JettyPlugin)
+    .settings(BuildInfoKeys.buildInfoObject:= "ServerBuildInfo",
+      BuildInfoKeys.buildInfoKeys += BuildInfoKeys.buildInfoBuildNumber,
+      SbtGit.git.baseVersion := Version,
+      BuildInfoKeys.buildInfoKeys += SbtGit.git.formattedShaVersion,
+      BuildInfoKeys.buildInfoKeys += SbtGit.git.formattedDateVersion
+  )
     .aggregate(DomainTier, DataTier, Common)
 }
