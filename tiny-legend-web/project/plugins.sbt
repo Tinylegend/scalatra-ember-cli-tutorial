@@ -4,3 +4,5 @@ addSbtPlugin("org.scalatra.sbt" % "scalatra-sbt" % "0.5.0")
 
 // https://github.com/sbt/sbt-assembly
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.2")
+
+addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.9.2")
