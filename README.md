@@ -27,6 +27,9 @@ Create a template liked project for using Scala, Scalatra, Ember-cli with multip
 - Multiple services with Micro-Service architecture
 ![Multiple-server-architecture](docs/images/multiple-layers-services.png)
 
+- Note:
+Use the API service as a gateway to access entire SOA Service system.
+ 
 ## How the project be managed ##
 
 - This project will be step by step increasing the function by the git branch number. 
