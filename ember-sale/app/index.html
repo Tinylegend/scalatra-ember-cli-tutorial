@@ -20,6 +20,22 @@
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/ember-sale.js"></script>
 
+    <script src="http://www.ecom.net:9080/auth/js/keycloak.js"></script>
+
+    <script>
+      $( document ).ready(function() {
+
+        var keycloak = Keycloak();
+
+        keycloak.init({ onLoad: 'login-required' }).success(function(authenticated) {
+          alert(authenticated ? 'authenticated' : 'not authenticated');
+        }).error(function() {
+          alert('failed to initialize');
+        });
+      });
+
+    </script>
+
     {{content-for "body-footer"}}
   </body>
 </html>
