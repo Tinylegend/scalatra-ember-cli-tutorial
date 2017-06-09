@@ -1,11 +1,16 @@
 
 <div class="body">
-  {{#if session.authenticated}}
-    <button {{action 'logout'}}>Logout</button>
-  <div class="ui container">
-    {{outlet}}
+  <div class="container">
+    {{#link-to 'about' class='item'}}
+      About
+    {{/link-to}}
   </div>
-  {{else}}
-    <button {{action 'login'}}>login</button>
-  {{/if}}
+
+  <div class="container">
+     {{keycloak-session-link url=currentUrl}}
+  </div>
+
+
+    {{outlet}}
+
 </div>
