@@ -1,11 +1,11 @@
 
 <div class="body">
-  {{#if session.isAuthenticated}}
+  {{#if session.authenticated}}
     <button {{action 'logout'}}>Logout</button>
   <div class="ui container">
     {{outlet}}
   </div>
   {{else}}
-    {{login-form}}
+    <button {{action 'login'}}>login</button>
   {{/if}}
 </div>

@@ -21,7 +21,7 @@ export default Ember.Route.extend( {
 
     // set any keycloak init parameters where defaults need to be overidden
     session.set('responseMode', 'fragment');
-    session.set('onLoad', 'login-required');
+    session.set('onLoad', 'check-sso'); //OR: login-required
 
     // finally init the service and return promise to pause router.
     return session.initKeycloak();
