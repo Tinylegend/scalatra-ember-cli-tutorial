@@ -1,9 +1,30 @@
 import Ember from 'ember';
-import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
-export default Ember.Route.extend(ApplicationRouteMixin, {
-  actions: {
-    logout: function() {
-      this.get('session').invalidate();
-    }
+
+export default Ember.Route.extend( {
+  session: Ember.inject.service('keycloak-session'),
+
+  beforeModel: function () {
+
+    this._super(...arguments);
+
+    var session = this.get('session');
+
+    // Keycloak constructor arguments as described in the keycloak documentation.
+    var options = {
+      'url': 'http://www.ecom.net:9080/auth',
+      'realm': 'ecom-net',
+      'clientId': 'ecom-net-site'
+    };
+
+    // this will result in a newly constructed keycloak object
+    session.installKeycloak(options);
+
+    // set any keycloak init parameters where defaults need to be overidden
+    session.set('responseMode', 'fragment');
+    session.set('onLoad', 'login-required');
+
+    // finally init the service and return promise to pause router.
+    return session.initKeycloak();
+
   }
 });
