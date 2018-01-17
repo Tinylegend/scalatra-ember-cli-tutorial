@@ -2,9 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'ember-user',
+    modulePrefix: 'ember-sale',
     environment: environment,
-    rootURL: '/user',
+    rootURL: '/sale',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {

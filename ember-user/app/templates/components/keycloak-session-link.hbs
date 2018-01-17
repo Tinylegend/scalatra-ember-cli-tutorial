@@ -1,0 +1,12 @@
+{{#if session.ready}}
+
+  URL is: {{url}}
+
+  {{#if session.authenticated}}
+      <a href="#" {{action 'logout' url}}><i class="fa fa-sign-out"></i> Sign out</a>
+  {{else}}
+      <a href="#" {{action 'login' url}}><i class="fa fa-sign-in"></i> Sign in</a>
+  {{/if}}
+{{else}}
+    No session
+{{/if}}

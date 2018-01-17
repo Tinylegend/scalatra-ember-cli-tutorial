@@ -1,0 +1,7 @@
+{
+  "realm": "ecom-net",
+  "auth-server-url": "http://www.ecom.net:9080/auth",
+  "ssl-required": "external",
+  "resource": "ecom-net-site",
+  "public-client": true
+}
