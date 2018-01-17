@@ -2,6 +2,7 @@
 Create a template liked project for using Scala, Scalatra, Ember-cli with multiple projects in one place.
 
 Integration git to trello.
+Try again without consumer token
 
 ## Goal ##
 
