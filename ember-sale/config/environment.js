@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'ember-sale',
     environment: environment,
     rootURL: '/sale',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
