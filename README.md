@@ -1,6 +1,8 @@
 # scalatra-ember-cli-tutorial #
 Create a template liked project for using Scala, Scalatra, Ember-cli with multiple projects in one place.
 
+Integration git to trello.
+
 ## Goal ##
 
 - A Scalatra web service with fully layering in presentation/domain/data layers.
